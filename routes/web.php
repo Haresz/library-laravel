@@ -20,5 +20,5 @@ Route::get('/add', function () {
     return view('formadd');
 });
 Route::get('/edit', function () {
-    return view('formedit');
+    return view('formupdate');
 });

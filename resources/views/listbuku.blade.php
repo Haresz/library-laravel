@@ -12,7 +12,7 @@
         <p class="h3 text-center py-5 bg-light">Daftar Buku</p>
         <div class="m-5">
             <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-primary">Tambah Buku</button>
+            <a href="/add" class="btn btn-primary ">Tambah Buku</a>
                 <div class="input-group w-25 ">
                     <input type="text" class="form-control" placeholder="Cari judul buku" aria-label="Cari judul buku" aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -20,57 +20,38 @@
                     </div>
                 </div>
             </div>
-                <div class="my-5 row row-cols-4" >
-                    <div class="card col m-4" style="width: 18rem;">
+                <div class="row row-cols-4 my-4" >
+                    <div class="card col m-2" style="width: 18rem;">
                         <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <div class="d-flex">
-                                <a href="#" class="btn btn-primary mr-4">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
+                                <a href="/edit" class="btn btn-primary ">Edit</a>
+                                <a href="#" class="btn btn-danger mx-4">Hapus</a>
                             </div>
                         </div>
                     </div>
-                    <div class="card col m-4" style="width: 18rem;">
-                        <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="d-flex">
-                                <a href="#" class="btn btn-primary mr-4">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col m-4" style="width: 18rem;">
-                        <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="d-flex">
-                                <a href="#" class="btn btn-primary mr-4">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col m-4" style="width: 18rem;">
-                        <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="d-flex">
-                                <a href="#" class="btn btn-primary mr-4">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col m-4" style="width: 18rem;">
-                        <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="d-flex">
-                                <a href="#" class="btn btn-primary mr-4">Edit</a>
-                                <a href="#" class="btn btn-danger">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
+                    @component('component.card')
+                        @slot('src') sampul.jpg @endslot
+                        @slot('title') BULAN @endslot
+                        @slot('id') 1 @endslot
+                    @endcomponent
+                    @component('component.card')
+                        @slot('src') sampul.jpg @endslot
+                        @slot('title') BINTANG @endslot
+                        @slot('id') 1 @endslot
+                    @endcomponent
+                    @component('component.card')
+                        @slot('src') sampul.jpg @endslot
+                        @slot('title') BUMI @endslot
+                        @slot('id') 1 @endslot
+                    @endcomponent
+                    @component('component.card')
+                        @slot('src') sampul.jpg @endslot
+                        @slot('title') BUMI @endslot
+                        @slot('id') 1 @endslot
+                    @endcomponent
+
                 </div>
             </div>
         </div>
