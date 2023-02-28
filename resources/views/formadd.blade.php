@@ -8,7 +8,8 @@
     <title>Tambah Buku</title>
 </head>
 <body>
-    <form class="card m-5 mx-auto" style="width: 75%;">
+    <form class="card m-5 mx-auto" style="width: 75%;" action="{{ route('formadd.store') }}" method="POST">
+        @csrf
         <div class="card-header h6">
             Formulir Tambah Buku
         </div>
