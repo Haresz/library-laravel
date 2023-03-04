@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +13,7 @@ use App\Http\Controllers\BooksController;
 |
 */
 
-Route::post('/add', [BooksController::class, 'store'])->name('formadd.store');
-Route::put('/update', [BooksController::class, 'update'])->name('formupdate');
-Route::get('/delete/{id}', [BooksController::class, 'destroy'])->name('destroy.listbuku');
-Route::get('/edit/{id}', [BooksController::class, 'edit'])->name('edit.listbuku');
-Route::get('/', [BooksController::class, 'index'])->name('listbuku');
-Route::get('/search', [BooksController::class, 'search'])->name('search.listbuku');
-Route::get('/add', function () {
-    return view('formadd');
-});
-Route::get('/edit', function () {
-    return view('formupdate');
-});
+Route::redirect('/', '/home', 302);
+
+Route::resource('home', BookController::class);
+Route::get('search', [BookController::class, 'search'])->name('home.search');
