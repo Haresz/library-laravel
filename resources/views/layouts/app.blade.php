@@ -6,6 +6,10 @@
         @includeIf('partials.head.css')
     </head>
     <body>
-        @yield('page-content')
+        @hasSection ('page-content')
+            @yield('page-content')
+        @endif
+
+        @includeIf('partials.script.app')
     </body>
 </html>

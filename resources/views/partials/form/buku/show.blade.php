@@ -7,7 +7,7 @@
         </div>
         <div class="card-body">
             <x-input name="judul" label="Judul" :value="$book->judul" disabled />
-            <x-input name="sampul" label="Upload Sampul" :value="old('sampul')" type="file" disabled />
+            <x-input name="sampul" label="Upload Sampul" :value="old('sampul')" type="file" :image="$book->sampul" disabled />
             <x-input name="pengarang" label="Pengarang" :value="$book->pengarang" disabled />
             <x-input name="penerbit" label="Penerbit" :value="$book->penerbit" disabled />
             <button type="submit" class="btn btn-success">Ubah Data</button>
