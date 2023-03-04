@@ -21,37 +21,23 @@
                 </div>
             </div>
                 <div class="row row-cols-4 my-4" >
-                    <div class="card col m-2" style="width: 18rem;">
-                        <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="d-flex">
-                                <a href="/edit" class="btn btn-primary ">Edit</a>
-                                <a href="#" class="btn btn-danger mx-4">Hapus</a>
+                    @section ($books)
+                        <div class="card col m-2" style="width: 18rem;">
+                            <img src="sampul.jpg" class="card-img-top" alt="sampul-buku">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$buku}}</h5>
+                                <div class="d-flex">
+                                    <a href="/edit" class="btn btn-primary ">Edit</a>
+                                    <a href="#" class="btn btn-danger mx-4">Hapus</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    @component('component.card')
+                    @stop
+                    <!-- @component('component.card')
                         @slot('src') sampul.jpg @endslot
                         @slot('title') BULAN @endslot
                         @slot('id') 1 @endslot
-                    @endcomponent
-                    @component('component.card')
-                        @slot('src') sampul.jpg @endslot
-                        @slot('title') BINTANG @endslot
-                        @slot('id') 1 @endslot
-                    @endcomponent
-                    @component('component.card')
-                        @slot('src') sampul.jpg @endslot
-                        @slot('title') BUMI @endslot
-                        @slot('id') 1 @endslot
-                    @endcomponent
-                    @component('component.card')
-                        @slot('src') sampul.jpg @endslot
-                        @slot('title') BUMI @endslot
-                        @slot('id') 1 @endslot
-                    @endcomponent
-
+                    @endcomponent -->
                 </div>
             </div>
         </div>
