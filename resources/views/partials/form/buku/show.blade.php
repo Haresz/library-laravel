@@ -3,7 +3,7 @@
 @section('page-content')
     <form class="card m-5 mx-auto" style="width: 75%;">
         <div class="card-header h6">
-            Formulir Edit Buku
+            Detail Buku
         </div>
         <div class="card-body">
             <x-input name="judul" label="Judul" :value="$book->judul" disabled />
