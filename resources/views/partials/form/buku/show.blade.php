@@ -3,14 +3,16 @@
 @section('page-content')
     <form class="card m-5 mx-auto" style="width: 75%;">
         <div class="card-header h6">
-            Formulir Edit Buku
+            Detail Buku
         </div>
         <div class="card-body">
             <x-input name="judul" label="Judul" :value="$book->judul" disabled />
-            <x-input name="sampul" label="Upload Sampul" :value="old('sampul')" type="file" disabled />
+            <label class="mb-3 my-2" for="sampul">Sampul</label>
+            <div>
+                <img id="sampul" name="sampul" class="img-fluid mb-3 col-sm-5" src="{{ $book->sampul }}" style="max-width: 12.5em; max-height: 12.5em;">
+            </div>
             <x-input name="pengarang" label="Pengarang" :value="$book->pengarang" disabled />
             <x-input name="penerbit" label="Penerbit" :value="$book->penerbit" disabled />
-            <button type="submit" class="btn btn-success">Ubah Data</button>
             <a href="{{ route('home.index') }}" class="btn btn-primary">Kembali</a>
         </div>
     </form>

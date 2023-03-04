@@ -5,11 +5,10 @@
         <div class="d-flex">
             <a href="{{ route('home.edit', $id) }}" class="btn btn-primary ">Edit</a>
             <a href="{{ route('home.show', $id) }}" class="btn btn-success ">Lihat</a>
-            <form method="post" action="{{ route('home.destroy', $id) }}">
+            <form class="d-inline" action="{{ route('home.destroy', $id) }}" method="post">
                 @csrf
                 @method('DELETE')
-
-                <button type="submit" class="btn btn-danger mx-4">Hapus</button>
+                <a href="" class="btn btn-danger confirm-delete">Hapus</a>
             </form>
         </div>
     </div>
