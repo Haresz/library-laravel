@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('listbuku');
-});
-Route::get('/add', function () {
-    return view('formadd');
-});
-Route::get('/edit', function () {
-    return view('formupdate');
-});
+Route::redirect('/', '/home', 302);
+
+Route::resource('home', BookController::class);
+Route::get('search', [BookController::class, 'search'])->name('home.search');
