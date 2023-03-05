@@ -61,6 +61,7 @@ class BookController extends Controller
         $validated = $validator->validated();
 
         $image = $validated['sampul'];
+        // belum paham sama codingan nya
         $new_name = uniqid() . '_' . date('His') . '.' . $image->getClientOriginalExtension();
 
         if (!Storage::exists('/public/' . $new_name)) {
