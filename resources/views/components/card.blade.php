@@ -4,10 +4,10 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
-        <!-- <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ $penerbit }}</li>
-            <li class="list-group-item">{{ $pengarang }}</li>
-        </ul> -->
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">penerbit</li>
+            <li class="list-group-item">pengarang</li>
+        </ul>
         <div class="d-flex">
             <a href="{{ route('home.edit', $id) }}" class="btn btn-primary ">Edit</a>
             <a href="{{ route('home.show', $id) }}" class="btn btn-success ">Lihat</a>
