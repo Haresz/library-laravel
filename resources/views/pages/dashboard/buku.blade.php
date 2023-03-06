@@ -17,10 +17,10 @@
             </div>
             <div class="row row-cols-4  my-4 mx-auto" >
                 @foreach ($books as $book)
-                    <x-card :image="$book->sampul" :title="$book->judul" :penerbit="$book->penerbit" :pengarang="$book->pengarang" :id="$book->id" />
+                    <x-card :image="$book->sampul" :title="$book->judul"  :id="$book->id" />
                 @endforeach
-                {{ $books->links() }}
             </div>
+            {{ $books->links() }}
         </div>
     </div>
 @endsection

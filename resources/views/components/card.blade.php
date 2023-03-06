@@ -4,11 +4,12 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
-        <!-- <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ $penerbit }}</li>
-            <li class="list-group-item">{{ $pengarang }}</li>
-        </ul> -->
-        <div class="d-flex">
+        <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item p-0 pb-2">Pengarang</li>
+            <li class="list-group-item p-0 pb-2">Penerbit</li>
+            <li class="list-group-item p-0 pb-2"></li>
+        </ul>
+        <div class="d-flex justify-content-between w-75">
             <a href="{{ route('home.edit', $id) }}" class="btn btn-primary ">Edit</a>
             <a href="{{ route('home.show', $id) }}" class="btn btn-success ">Lihat</a>
             <form class="d-inline" action="{{ route('home.destroy', $id) }}" method="post">
