@@ -1,8 +1,15 @@
-<div class="card col m-2" style="width: 18rem;">
-    <img src="{{ $image }}" class="card-img-top" alt="sampul-buku">
+<div class="card my-2 w-25">
+    <div class="card-img-top h-100 w-100" style="display: flex; justify-content: center; align-items: center; background-color: gray;">
+        <img src="{{ $image }}" class="w-100 align-middle" alt="sampul-buku">
+    </div>
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
-        <div class="d-flex">
+        <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item p-0 pb-2">Pengarang</li>
+            <li class="list-group-item p-0 pb-2">Penerbit</li>
+            <li class="list-group-item p-0 pb-2"></li>
+        </ul>
+        <div class="d-flex justify-content-between w-75">
             <a href="{{ route('home.edit', $id) }}" class="btn btn-primary ">Edit</a>
             <a href="{{ route('home.show', $id) }}" class="btn btn-success ">Lihat</a>
             <form class="d-inline" action="{{ route('home.destroy', $id) }}" method="post">
