@@ -14,7 +14,7 @@
         <div class="mx-5" style="margin-top: 180px;">
             <div class="row row-cols-4  my-4 mx-auto" >
                 @foreach ($books as $book)
-                    <x-card :image="$book->sampul" :title="$book->judul" :penerbit="$book->penerbit" :pengarang="$book->pengarang" :id="$book->id" />
+                    <x-card :image="$book->sampul" :title="$book->judul"  :id="$book->id" />
                 @endforeach
             </div>
             {{ $books->links() }}
