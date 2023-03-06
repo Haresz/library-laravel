@@ -2,19 +2,16 @@
 
 @section('page-content')
     <div>
-        <p class="h3 text-center py-5 bg-light">Daftar Buku</p>
-        <div class="m-5">
-            <div class="d-flex justify-content-between">
-                <a href="{{ route('home.create') }}" class="btn btn-primary ">Tambah Buku</a>
-                <div class="input-group w-auto">
-                    <div class="input-group-append">
-                        <form class="d-flex" action="{{ route('home.search') }}" method="GET">
-                            <input type="text" class="form-control" name="search" placeholder="Cari judul buku" aria-label="Cari judul buku" aria-describedby="basic-addon2" value="{{ old('seach') }}">
-                            <button class="btn btn-outline-primary" type="submit">Cari</button>
-                        </form>
-                    </div>
-                </div>
+        <nav class="d-flex justify-content-between p-5 text-light w-100" style="background-color: #010828; font-family: 'Inter', sans-serif; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+            <p class="h4">Daftar Buku</p>
+            <div style="width: 600px;">
+                <form class="d-flex">
+                    <input class="form-control me-2 rounded-pill" style="background: rgba(255, 255, 255, 0.15);" type="text" name="search" placeholder="Cari judul buku" aria-label="Cari judul buku" aria-describedby="basic-addon2" value="{{ old('seach') }}">
+                    <a href="{{ route('home.create') }}" style="width: 200px; background: #364FF6;" class="btn rounded-pill text-light">Tambah Buku</a>
+                </form>
             </div>
+        </nav>
+        <div class="mx-5" style="margin-top: 180px;">
             <div class="row row-cols-4  my-4 mx-auto" >
                 @foreach ($books as $book)
                     <x-card :image="$book->sampul" :title="$book->judul"  :id="$book->id" />
