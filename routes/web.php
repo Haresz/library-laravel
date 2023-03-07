@@ -21,6 +21,9 @@ Route::get('/login', function (){
 Route::get('/registrasi', function (){
     return view ('pages/reg');
 });
+Route::get('/admin', function (){
+    return view ('pages/dashboard/admin');
+});
 
 Route::resource('home', BookController::class);
 Route::get('search', [BookController::class, 'search'])->name('home.search');
