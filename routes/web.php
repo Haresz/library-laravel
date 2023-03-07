@@ -16,7 +16,10 @@ use App\Http\Controllers\BookController;
 Route::redirect('/', '/home', 302);
 
 Route::get('/login', function (){
-    return view ('pages/dashboard/login');
+    return view ('pages/login');
+});
+Route::get('/registrasi', function (){
+    return view ('pages/reg');
 });
 
 Route::resource('home', BookController::class);
