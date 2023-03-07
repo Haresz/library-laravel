@@ -15,5 +15,10 @@ use App\Http\Controllers\BookController;
 
 Route::redirect('/', '/home', 302);
 
+Route::get('/login', function (){
+    return view ('pages/dashboard/login');
+});
+
 Route::resource('home', BookController::class);
 Route::get('search', [BookController::class, 'search'])->name('home.search');
+
