@@ -5,17 +5,19 @@
     <div class="card-body">
         <h5 class="card-title">{{ $title }}</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item p-0 py-2">Pengarang : </li>
-            <li class="list-group-item p-0 py-2">Penerbit  : </li>
+            <li class="list-group-item p-0 py-2">Pengarang : {{ $author }}</li>
+            <li class="list-group-item p-0 py-2">Penerbit  : {{ $publisher }}</li>
         </ul>
-        {{-- <div class="d-flex w-100 justify-content-between mt-4">
-            <a href="{{ route('home.edit', $id) }}" class="btn btn-primary rounded-pill" style="width: 140px; background: #364FF6;">Ubah</a>
-            <form class="d-inline" action="{{ route('home.destroy', $id) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <a href="" style="width: 140px;" class="btn btn-outline-danger confirm-delete rounded-pill">Hapus</a>
-            </form>
-        </div> --}}
-        {{-- <a href="{{ route('home.show', $id) }}" class="btn btn-success w-100 mt-2 rounded-pill">Lihat</a> --}}
+        @if ($admin)
+            <div class="d-flex w-100 justify-content-between mt-4">
+                <a href="{{ route('admin.edit', $id) }}" class="btn btn-primary rounded-pill" style="width: 140px; background: #364FF6;">Ubah</a>
+                <form class="d-inline" action="{{ route('admin.destroy', $id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <a href="" style="width: 140px;" class="btn btn-outline-danger confirm-delete rounded-pill">Hapus</a>
+                </form>
+            </div>
+            <a href="{{ route('admin.show', $id) }}" class="btn btn-success w-100 mt-2 rounded-pill">Lihat</a>
+        @endif
     </div>
 </div>

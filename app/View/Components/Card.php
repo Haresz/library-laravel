@@ -7,19 +7,25 @@ use Illuminate\View\Component;
 class Card extends Component
 {
     public $id;
+    public $admin;
     public $title;
     public $image;
+    public $author;
+    public $publisher;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($id = '', $title = '', $image = 'sampul.jpg')
+    public function __construct($id = '', $admin = false, $title = '', $image = 'sampul.jpg', $author = '', $publisher = '')
     {
         $this->id = $id;
+        $this->admin = $admin;
         $this->title = $title;
         $this->image = $image;
+        $this->author = $author;
+        $this->publisher = $publisher;
     }
 
     /**
