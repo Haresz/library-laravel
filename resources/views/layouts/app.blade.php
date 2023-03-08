@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
     <head>
         @includeIf('partials.head.meta')
         @includeIf('partials.head.title')
         @includeIf('partials.head.css')
     </head>
-    <body>
+    <body class="h-100" >
         @hasSection ('page-content')
             @yield('page-content')
         @endif
