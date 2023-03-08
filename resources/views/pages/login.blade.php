@@ -29,7 +29,7 @@
                 <a class="mt-3" style="text-color: #364FF6;" href="#">Forgot password</a>
             </div>
             <button type="submit" style="width: 100%; background: #364FF6;" class="btn rounded-pill text-light my-4">Submit</button>
-            <p class="mt-5 text-center" >Belum punya akun?<a href="#"> Register </a></p>
+            <p class="mt-5 text-center" >Belum punya akun?<a href="/registrasi"> Register </a></p>
         </div>
     </div>
 </body>
