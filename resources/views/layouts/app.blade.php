@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100">
     <head>
         @includeIf('partials.head.meta')
         @includeIf('partials.head.title')
-        @includeIf('partials.head.css')
+        @includeIf('partials.head.app.css')
     </head>
     <body class="h-100" >
         @hasSection ('page-content')
