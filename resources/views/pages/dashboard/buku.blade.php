@@ -12,7 +12,7 @@
                 </form>
             </div>
             <div class="">
-                <a href="/login" type="submit" style="width: 120px; background: #364FF6;" class="btn rounded-pill text-light>login</a>
+                <a href="/login" type="submit" style="width: 120px; background: #364FF6;" class="btn rounded-pill text-light">login</a>
                 <a href="/register" type="submit" style="width: 120px; border: white 2px solid;" class="btn rounded-pill text-light">registrasi</a>   
             </div>
         </nav>
