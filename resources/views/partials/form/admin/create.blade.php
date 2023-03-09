@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-content')
-    <form class="card m-5 mx-auto" style="width: 75%;" action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data">
+    <form class="card m-5 mx-auto" style="width: 75%;" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-header h6">
             Formulir Tambah Buku
@@ -12,7 +12,7 @@
             <x-input name="pengarang" label="Pengarang" :value="old('pengarang')" required />
             <x-input name="penerbit" label="Penerbit" :value="old('penerbit')" required />
             <button type="submit" class="btn btn-success">Tambahkan Data</button>
-            <a href="{{ route('home.index') }}" class="btn btn-primary">Kembali</a>
+            <a href="{{ route('admin.index') }}" class="btn btn-primary">Kembali</a>
         </div>
     </form>
 @endsection

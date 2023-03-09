@@ -3,13 +3,11 @@
     <head>
         @includeIf('partials.head.meta')
         @includeIf('partials.head.title')
-        @includeIf('partials.head.app.css')
+        @includeIf('partials.head.auth.css')
     </head>
     <body class="h-100" >
         @hasSection ('page-content')
             @yield('page-content')
         @endif
-
-        @includeIf('partials.script.app')
     </body>
 </html>

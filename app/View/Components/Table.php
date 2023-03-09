@@ -4,12 +4,11 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Card extends Component
+class Table extends Component
 {
     public $id;
-    public $admin;
-    public $title;
     public $image;
+    public $title;
     public $author;
     public $publisher;
 
@@ -18,12 +17,11 @@ class Card extends Component
      *
      * @return void
      */
-    public function __construct($id = '', $admin = false, $title = '', $image = 'sampul.jpg', $author = '', $publisher = '')
+    public function __construct($id = '', $image = 'sampul.jpg', $title = '', $author = '', $publisher = '')
     {
         $this->id = $id;
-        $this->admin = $admin;
-        $this->title = $title;
         $this->image = $image;
+        $this->title = $title;
         $this->author = $author;
         $this->publisher = $publisher;
     }
@@ -35,6 +33,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('components.card');
+        return view('components.table');
     }
 }

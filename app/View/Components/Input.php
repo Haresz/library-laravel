@@ -12,6 +12,7 @@ class Input extends Component
     public $value;
     public $image;
     public $disabled;
+    public $required;
     public $placeholder;
 
     /**
@@ -19,7 +20,7 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($name = '', $label = '', $type = 'text', $value = '', $image = '', $disabled = false, $placeholder = '')
+    public function __construct($name = '', $label = '', $type = 'text', $value = '', $image = '', $disabled = false, $required = false, $placeholder = '')
     {
         $this->name = $name;
         $this->type = $type;
@@ -27,6 +28,7 @@ class Input extends Component
         $this->value = $value;
         $this->image = $image;
         $this->disabled = $disabled;
+        $this->required = $required;
         $this->placeholder = $placeholder;
     }
 

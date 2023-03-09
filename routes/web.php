@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +19,18 @@ use App\Http\Controllers\BookController;
 |
 */
 
-Route::redirect('/', '/home', 302);
+Route::get('/', [BookController::class, 'index'])->name('home.index');
+Route::get('search', SearchController::class)->name('search');
+Route::resource('home', BookController::class)->only(['create', 'store']);
 
-Route::get('/login', function (){
-    return view ('pages/login');
-});
-Route::get('/registrasi', function (){
-    return view ('pages/reg');
-});
-Route::get('/admin', function (){
-    return view ('pages/dashboard/admin');
+Route::middleware('guest')->group(function () {
+    Route::resources([
+        'login' => LoginController::class,
+        'register' => RegisterController::class
+    ], ['only' => ['index', 'store']]);
 });
 
-Route::resource('home', BookController::class);
-Route::get('search', [BookController::class, 'search'])->name('home.search');
-
+Route::middleware('auth')->group(function () {
+    Route::post('logout', LogoutController::class)->name('logout');
+    Route::resource('admin', AdminController::class);
+});
