@@ -8,10 +8,9 @@
                 <a href="{{ route('home.create') }}" class="btn btn-primary ">Tambah Buku</a>
                 <div class="input-group w-25 ">
                     <div class="input-group-append">
-                        <form action="{{ route('home.search') }}" method="GET">
+                        <form class="d-flex" action="{{ route('home.search') }}" method="GET">
                             <input type="text" class="form-control" name="search" placeholder="Cari judul buku" aria-label="Cari judul buku" aria-describedby="basic-addon2" value="{{ old('seach') }}">
-
-                            <button class="btn btn-outline-primary" type="submit">Cari !</button>
+                            <button class="btn btn-outline-primary" type="submit">Cari</button>
                         </form>
                     </div>
                 </div>
