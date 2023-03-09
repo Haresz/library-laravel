@@ -11,7 +11,5 @@
         @endif
 
         @includeIf('partials.script.app')
-        @includeIf('partials.script.popup')
-        @includeIf('partials.script.bootstrap')
     </body>
 </html>
