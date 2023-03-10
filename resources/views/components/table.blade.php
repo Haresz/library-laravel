@@ -11,7 +11,7 @@
         <form class="d-inline" action="{{ route('admin.destroy', $id) }}" method="post">
             @csrf
             @method('DELETE')
-            <a href="" style="width: 140px;" >Hapus</a>
+            <a href="" style="width: 140px;" class="confirm-delete">Hapus</a>
         </form>
         <a href="{{ route('admin.show', $id) }}" style="width: 140px;">Lihat</a>
     </td>
