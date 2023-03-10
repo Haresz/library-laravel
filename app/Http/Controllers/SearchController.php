@@ -18,7 +18,7 @@ class SearchController extends Controller
         $book = $request->get('search'); // Get search value
 
         if ($book) { // If search value not empty
-            $books = Book::where('judul', 'like', '%' . $book . '%')->paginate(5); // Get books by search value
+            $books = Book::where('judul', 'like', '%' . $book . '%')->paginate(12); // Get books by search value
         } else { // If search value empty
             $books = Book::paginate(12); // Get all books
         }

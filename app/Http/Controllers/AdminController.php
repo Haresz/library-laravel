@@ -15,7 +15,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data['books'] = Book::latest()->paginate(10); // Get all books
+        $length = request()->get('length'); // Get length
+
+        if ($length) { // If length not empty
+            $data['books'] = Book::paginate($length); // Get all books
+        } else {
+            $data['books'] = Book::paginate(10); // Get all books
+        }
 
         return view('pages.dashboard.admin', $data); // Return view with data
     }
