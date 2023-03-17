@@ -3,15 +3,16 @@
         <div>
             <div class="h5 mb-0">List Buku</div>
                 <div class="d-flex">
-                    <select class="mt-1" style="height: 25px; width: 50px;">
-                        <option value="10" selected>10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
+                    <select id="length_menu" class="mt-1" style="height: 25px; width: 50px;">
+                        <option value="10" {{ request()->get('length') == '10' ? 'selected' : '' }}>10</option>
+                        <option value="25" {{ request()->get('length') == '25' ? 'selected' : '' }}>25</option>
+                        <option value="50" {{ request()->get('length') == '50' ? 'selected' : '' }}>50</option>
+                        <option value="100" {{ request()->get('length') == '100' ? 'selected' : '' }}>100</option>
                     </select>
                     <p class="mt-1 ml-2" >data</p>
                 </div>
         </div>
+
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Export
@@ -21,7 +22,6 @@
                 <li><a class="dropdown-item" href="{{ route('export') }}">Export Excel</a></li>
             </ul>
         <a href="{{ route('admin.create') }}" style="width: 200px; height: 40px; background: #364FF6;" class="btn rounded-pill text-light align-self-center">Tambah Buku</a>
-        </div>
     </div>
     <div class="mx-5" style="height: 80%; box-sizing: border-box; overflow: scroll;">
         <table class="table">
@@ -44,3 +44,13 @@
         {{ $books->links() }}
     </div>
 </div>
+
+@once
+    @push('addon-script')
+        <script>    
+            $('#length_menu').on('change', function() {
+                window.location.href = "{{ route('admin.index') }}?length=" + this.value;
+            });
+        </script>
+    @endpush
+@endonce
