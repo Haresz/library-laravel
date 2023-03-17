@@ -16,9 +16,9 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Export
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">pdf</a></li>
-                <li><a class="dropdown-item" href="#">excel</a></li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                @csrf	
+                <li><a class="dropdown-item" href="{{ route('export') }}">Export Excel</a></li>
             </ul>
         <a href="{{ route('admin.create') }}" style="width: 200px; height: 40px; background: #364FF6;" class="btn rounded-pill text-light align-self-center">Tambah Buku</a>
         </div>

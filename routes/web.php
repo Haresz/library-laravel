@@ -7,6 +7,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ExportExcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,5 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)->name('logout');
     Route::resource('admin', AdminController::class);
+    Route::get('export', [ExportExcelController::class, 'export'])->name('export'); // Export excel
 });
